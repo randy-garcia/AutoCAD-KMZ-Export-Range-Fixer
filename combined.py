@@ -9,12 +9,12 @@ print '\n recomended range of 6500'
 userrange = raw_input('what is the desired range?')
 
 #change file name from KMZ to ZIP
-path = 'C:\\Users\\rgarcia\\Documents\\py\\' # go back and change path value
+path = #insert path
 os.rename(path + zipname + '.kmz', path + zipname + '.zip')
 
 
 #extract KMZ to get KML
-kmz = zipfile.ZipFile('C:\\Users\\rgarcia\\Documents\\py\\' + zipname + '.zip', 'r')
+kmz = zipfile.ZipFile(path + zipname + '.zip', 'r')
 kmz.extractall('C:\\Users\\rgarcia\\Documents\\py\\')
 kmz.close()
 
@@ -22,7 +22,7 @@ kmz.close()
 os.rename(path + zipname+ '.kml', path + zipname + '.xml')
 
 # parses XML for 
-doc = minidom.parse('C:\\Users\\rgarcia\\Documents\\py\\' + zipname + '.xml')
+doc = minidom.parse('path' + zipname + '.xml')
 item = doc.getElementsByTagName('range')
 print item[0].firstChild.nodeValue
 item[0].firstChild.replaceWholeText( userrange )
